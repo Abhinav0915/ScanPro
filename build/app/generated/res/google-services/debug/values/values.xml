@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">541441504520-2i9ulqs06vvekodnebmqi9deq62tlrhg.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">541441504520</string>
+    <string name="google_api_key" translatable="false">AIzaSyBl7hcH7sEv7z9h75IuhMAVYG-YopP6zus</string>
+    <string name="google_app_id" translatable="false">1:541441504520:android:baa3366809850b952da8bd</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBl7hcH7sEv7z9h75IuhMAVYG-YopP6zus</string>
+    <string name="google_storage_bucket" translatable="false">scanpro-82a65.appspot.com</string>
+    <string name="project_id" translatable="false">scanpro-82a65</string>
+</resources>

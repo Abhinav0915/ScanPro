@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "541441504520",
+    "project_id": "scanpro-82a65",
+    "storage_bucket": "scanpro-82a65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541441504520:android:baa3366809850b952da8bd",
+        "android_client_info": {
+          "package_name": "com.example.scanpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541441504520-e4n2s892avhcfmdkfqprennb9u6596lc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.scanpro",
+            "certificate_hash": "60c60cef4e606addfbc4a33d5ac00c63e2cff0fe"
+          }
+        },
+        {
+          "client_id": "541441504520-2i9ulqs06vvekodnebmqi9deq62tlrhg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl7hcH7sEv7z9h75IuhMAVYG-YopP6zus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541441504520-2i9ulqs06vvekodnebmqi9deq62tlrhg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
