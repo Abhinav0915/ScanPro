@@ -264,36 +264,6 @@ class _AddItemPageState extends State<AddItemPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: width * 0.05,
-                    ),
-                    DottedBorder(
-                      borderType: BorderType.RRect,
-                      strokeWidth: 1,
-                      dashPattern: [3, 3],
-                      color: Colors.blue,
-                      child: Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(CupertinoIcons.add_circled,
-                                  size: 30, color: Colors.blue.shade700),
-                              Text("Add Images",
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.blue.shade700)),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -347,7 +317,8 @@ class _AddItemPageState extends State<AddItemPage> {
                       'weight': weight,
                       'description': description,
                       'image': _image.toString(),
-                    }).then((value) => print("Product Added"));
+                    }).then((value) =>
+                        Navigator.pushNamed(context, '/confirmation-page'));
                   },
                   child: const Text(
                     "Save & Next",

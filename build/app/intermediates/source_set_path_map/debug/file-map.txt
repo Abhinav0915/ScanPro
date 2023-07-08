@@ -42,4 +42,5 @@ com.example.scanpro.app-packaged_res-40 /home/clutcher/Desktop/scanpro/build/fir
 com.example.scanpro.app-packaged_res-41 /home/clutcher/Desktop/scanpro/build/flutter_barcode_scanner/intermediates/packaged_res/debug
 com.example.scanpro.app-packaged_res-42 /home/clutcher/Desktop/scanpro/build/flutter_plugin_android_lifecycle/intermediates/packaged_res/debug
 com.example.scanpro.app-packaged_res-43 /home/clutcher/Desktop/scanpro/build/image_picker_android/intermediates/packaged_res/debug
-com.example.scanpro.app-packaged_res-44 /home/clutcher/Desktop/scanpro/build/url_launcher_android/intermediates/packaged_res/debug
+com.example.scanpro.app-packaged_res-44 /home/clutcher/Desktop/scanpro/build/path_provider_android/intermediates/packaged_res/debug
+com.example.scanpro.app-packaged_res-45 /home/clutcher/Desktop/scanpro/build/url_launcher_android/intermediates/packaged_res/debug

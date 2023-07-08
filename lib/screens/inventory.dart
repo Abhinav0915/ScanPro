@@ -65,20 +65,21 @@ class _InventoryPageState extends State<InventoryPage> {
                 MaterialPageRoute(builder: (context) => const InventoryPage()),
               );
               break;
-         case 1:
-  FlutterBarcodeScanner.scanBarcode("#ff6666", "Cancel", true, ScanMode.BARCODE)
-    .then((value) {
-      // Handle the scanned barcode here
-      print("Scanned: $value");
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => AddItemPage(),
-          settings: RouteSettings(arguments: value),
-        ),
-      );
-    });
-  break;
+            case 1:
+              FlutterBarcodeScanner.scanBarcode(
+                      "#ff6666", "Cancel", true, ScanMode.BARCODE)
+                  .then((value) {
+                // Handle the scanned barcode here
+                print("Scanned: $value");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddItemPage(),
+                    settings: RouteSettings(arguments: value),
+                  ),
+                );
+              });
+              break;
 
             case 2:
               Navigator.push(
@@ -92,7 +93,7 @@ class _InventoryPageState extends State<InventoryPage> {
         },
       ),
       body: const Center(
-        child: Text("Dashboard"),
+        child: Text("Inventory Page"),
       ),
     );
   }
