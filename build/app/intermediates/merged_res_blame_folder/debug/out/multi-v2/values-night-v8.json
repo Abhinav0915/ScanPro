@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/clutcher/Flutter Projects/scanpro/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/clutcher/Desktop/scanpro/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

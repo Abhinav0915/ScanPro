@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:scanpro/screens/addItem.dart';
 import '../widgets/BottomNavigationBar.dart';
@@ -22,7 +23,7 @@ class _InventoryPageState extends State<InventoryPage> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.menu),
+          icon: const Icon(CupertinoIcons.chevron_back),
         ),
         title: Container(
           height: 40,
@@ -64,18 +65,25 @@ class _InventoryPageState extends State<InventoryPage> {
                 MaterialPageRoute(builder: (context) => const InventoryPage()),
               );
               break;
-            case 1:
-              FlutterBarcodeScanner.scanBarcode(
-                      "#ff6666", "Cancel", true, ScanMode.BARCODE)
-                  .then((value) {
-                // Handle the scanned barcode here
-                print("Scanned: $value");
-              });
-              break;
+         case 1:
+  FlutterBarcodeScanner.scanBarcode("#ff6666", "Cancel", true, ScanMode.BARCODE)
+    .then((value) {
+      // Handle the scanned barcode here
+      print("Scanned: $value");
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => AddItemPage(),
+          settings: RouteSettings(arguments: value),
+        ),
+      );
+    });
+  break;
+
             case 2:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const AddItemPage()),
+                MaterialPageRoute(builder: (context) => const InventoryPage()),
               );
               break;
             default:
