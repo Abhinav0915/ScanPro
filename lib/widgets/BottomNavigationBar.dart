@@ -37,7 +37,6 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         currentIndex: widget.currentIndex,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
-        showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         iconSize: 25,
         onTap: widget.onTap,

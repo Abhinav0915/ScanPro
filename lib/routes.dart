@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scanpro/screens/addItem.dart';
-import 'package:scanpro/screens/confirmation.dart';
+import 'package:scanpro/widgets/confirmation.dart';
 import 'package:scanpro/screens/inventory.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -8,14 +8,14 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
     case InventoryPage.routName:
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => const InventoryPage(),
+        builder: (_) => InventoryPage(),
       );
-      case AddItemPage.routName:
+    case AddItemPage.routName:
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => const AddItemPage(),
       );
-      case ConfirmationPage.routName:
+    case ConfirmationPage.routName:
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => const ConfirmationPage(),

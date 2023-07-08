@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:scanpro/screens/addItem.dart';
 import '../widgets/BottomNavigationBar.dart';
@@ -28,7 +28,7 @@ class _InventoryPageState extends State<InventoryPage> {
         title: Container(
           height: 40,
           width: 300,
-          padding: EdgeInsets.only(left: 10, right: 10),
+          padding: const EdgeInsets.only(left: 10, right: 10),
           decoration: BoxDecoration(
             color: const Color(0xFFE8ECF4),
             borderRadius: BorderRadius.circular(20),
@@ -74,7 +74,7 @@ class _InventoryPageState extends State<InventoryPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => AddItemPage(),
+                    builder: (context) => const AddItemPage(),
                     settings: RouteSettings(arguments: value),
                   ),
                 );
@@ -92,8 +92,113 @@ class _InventoryPageState extends State<InventoryPage> {
           }
         },
       ),
-      body: const Center(
-        child: Text("Inventory Page"),
+      body: FutureBuilder<QuerySnapshot>(
+        future: FirebaseFirestore.instance.collection('products').get(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return const Center(
+              child: Text('Error fetching data'),
+            );
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
+            return const Center(
+              child: Text('No products found'),
+            );
+          }
+
+          // Data is fetched successfully
+          return Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.only(left: 40, right: 30, top: 10),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      width: 120,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      // Place any content in the first container
+                      child: const Center(
+                        child: Text(
+                          'Normal',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Container(
+                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      width: 120,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      // Place any content in the first container
+                      child: const Center(
+                        child: Text(
+                          'Defective',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.only(left: 30, right: 30, top: 15),
+                  child: DataTable(
+                    dataRowColor: MaterialStateColor.resolveWith(
+                      (states) => Colors.grey.shade200,
+                    ),
+                    headingTextStyle: const TextStyle(color: Colors.white),
+                    headingRowColor: MaterialStateColor.resolveWith(
+                      (states) => const Color.fromARGB(255, 22, 38, 70),
+                    ),
+                    columns: const [
+                      DataColumn(label: Text('Product Name')),
+                      DataColumn(label: Text('MRP')),
+                      DataColumn(label: Text('Weight')),
+                    ],
+                    rows: snapshot.data!.docs.map((DocumentSnapshot document) {
+                      var productName = document['name'] ?? '';
+                      var mrp = document['mrp']?.toString() ?? '';
+                      var weight = document['weight']?.toString() ?? '';
+
+                      return DataRow(
+                        cells: [
+                          DataCell(Text(productName)),
+                          DataCell(Text(mrp)),
+                          DataCell(Text(weight)),
+                        ],
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: const InventoryPage(),
+      home: InventoryPage(),
       debugShowCheckedModeBanner: false,
     );
   }
