@@ -16,6 +16,7 @@ class InventoryPage extends StatefulWidget {
 
 class _InventoryPageState extends State<InventoryPage> {
   int _currentIndex = 0;
+  String _searchQuery = '';
 
   @override
   Widget build(BuildContext context) {
@@ -28,24 +29,46 @@ class _InventoryPageState extends State<InventoryPage> {
         title: Container(
           height: 40,
           width: 300,
-          padding: const EdgeInsets.only(left: 10, right: 10),
+          padding: const EdgeInsets.only(
+            left: 10,
+            right: 10,
+          ),
           decoration: BoxDecoration(
             color: const Color(0xFFE8ECF4),
             borderRadius: BorderRadius.circular(20),
           ),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Enter Product Name",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
+              Expanded(
+                child: TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      _searchQuery = value;
+                    });
+                  },
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Enter Product Name",
+                    hintStyle: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 16,
+                    ),
+                    contentPadding:
+                        EdgeInsets.only(left: 10, right: 10, bottom: 5),
+                  ),
                 ),
               ),
-              Icon(
-                CupertinoIcons.search,
-                color: Colors.grey,
+              IconButton(
+                onPressed: () {
+                  // Perform search or filter logic based on _searchQuery
+                  // You can use _searchQuery to filter the products displayed in the DataTable
+                  print("Search: $_searchQuery");
+                },
+                icon: Icon(
+                  CupertinoIcons.search,
+                  color: Colors.grey,
+                ),
               ),
             ],
           ),
@@ -81,13 +104,13 @@ class _InventoryPageState extends State<InventoryPage> {
               });
               break;
 
-            case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const InventoryPage()),
-              );
-              break;
-            default:
+            // case 2:
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => const InventoryPage()),
+            //   );
+            //   break;
+            // default:
             // Handle invalid index
           }
         },
@@ -113,60 +136,20 @@ class _InventoryPageState extends State<InventoryPage> {
             );
           }
 
-          // Data is fetched successfully
+          // Filter the products based on the search query
+          final filteredProducts = snapshot.data!.docs.where((document) {
+            final productName = document['name'] ?? '';
+            return productName
+                .toLowerCase()
+                .contains(_searchQuery.toLowerCase());
+          }).toList();
+
+          // Data is fetched and filtered successfully
           return Column(
             children: [
-              Container(
-                padding: const EdgeInsets.only(left: 40, right: 30, top: 10),
-                child: Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
-                      width: 120,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      // Place any content in the first container
-                      child: const Center(
-                        child: Text(
-                          'Normal',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Container(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
-                      width: 120,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      // Place any content in the first container
-                      child: const Center(
-                        child: Text(
-                          'Defective',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.only(left: 30, right: 30, top: 15),
+                  padding: const EdgeInsets.only(left: 40, right: 30, top: 15),
                   child: DataTable(
                     dataRowColor: MaterialStateColor.resolveWith(
                       (states) => Colors.grey.shade200,
@@ -180,7 +163,7 @@ class _InventoryPageState extends State<InventoryPage> {
                       DataColumn(label: Text('MRP')),
                       DataColumn(label: Text('Weight')),
                     ],
-                    rows: snapshot.data!.docs.map((DocumentSnapshot document) {
+                    rows: filteredProducts.map((DocumentSnapshot document) {
                       var productName = document['name'] ?? '';
                       var mrp = document['mrp']?.toString() ?? '';
                       var weight = document['weight']?.toString() ?? '';

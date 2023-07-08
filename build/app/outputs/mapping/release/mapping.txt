@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 74be73e
-# pg_map_hash: SHA-256 74be73e9bb7c16d7e5a04703463387c3c703da86a7386c20779080a61080675a
+# pg_map_id: 28ea939
+# pg_map_hash: SHA-256 28ea9397faac95668087e23e096788c6a9fb4d3a369858e59735ec686301aac5
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -14790,12 +14790,14 @@ com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$SCAN_MODE_ENUM -> com.amo
     com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$SCAN_MODE_ENUM BARCODE -> o
     com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$SCAN_MODE_ENUM QR -> n
     com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$SCAN_MODE_ENUM[] $VALUES -> q
+    com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$SCAN_MODE_ENUM[] $values() -> f
 com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$ScaleListener -> com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$e:
     com.amolg.flutterbarcodescanner.BarcodeCaptureActivity this$0 -> a
 com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$USE_FLASH -> com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$f:
     com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$USE_FLASH[] $VALUES -> p
     com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$USE_FLASH OFF -> o
     com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$USE_FLASH ON -> n
+    com.amolg.flutterbarcodescanner.BarcodeCaptureActivity$USE_FLASH[] $values() -> f
 com.amolg.flutterbarcodescanner.BarcodeGraphic -> com.amolg.flutterbarcodescanner.a:
     int[] COLOR_CHOICES -> f
     com.google.android.gms.vision.barcode.Barcode mBarcode -> e
@@ -47285,6 +47287,7 @@ io.flutter.plugins.camera.CameraState -> q5.g0:
     io.flutter.plugins.camera.CameraState STATE_WAITING_PRECAPTURE_START -> p
     io.flutter.plugins.camera.CameraState STATE_WAITING_PRECAPTURE_DONE -> q
     io.flutter.plugins.camera.CameraState STATE_CAPTURING -> r
+    io.flutter.plugins.camera.CameraState[] $values() -> f
 io.flutter.plugins.camera.CameraUtils -> q5.h0:
     io.flutter.embedding.engine.systemchannels.PlatformChannel$DeviceOrientation deserializeDeviceOrientation(java.lang.String) -> a
     java.util.List getAvailableCameras(android.app.Activity) -> b
@@ -47368,10 +47371,12 @@ io.flutter.plugins.camera.DartMessenger$CameraEventType -> q5.l0$e:
     io.flutter.plugins.camera.DartMessenger$CameraEventType INITIALIZED -> q
     io.flutter.plugins.camera.DartMessenger$CameraEventType[] $VALUES -> r
     java.lang.String method -> n
+    io.flutter.plugins.camera.DartMessenger$CameraEventType[] $values() -> f
 io.flutter.plugins.camera.DartMessenger$DeviceEventType -> q5.l0$f:
     io.flutter.plugins.camera.DartMessenger$DeviceEventType ORIENTATION_CHANGED -> o
     java.lang.String method -> n
     io.flutter.plugins.camera.DartMessenger$DeviceEventType[] $VALUES -> p
+    io.flutter.plugins.camera.DartMessenger$DeviceEventType[] $values() -> f
 io.flutter.plugins.camera.ErrorCallback -> q5.m0:
     void onError(java.lang.String,java.lang.String) -> a
 io.flutter.plugins.camera.ImageSaver -> q5.n0:
@@ -47518,7 +47523,8 @@ io.flutter.plugins.camera.features.autofocus.FocusMode -> s5.b:
     java.lang.String strValue -> n
     io.flutter.plugins.camera.features.autofocus.FocusMode locked -> p
     io.flutter.plugins.camera.features.autofocus.FocusMode auto -> o
-    io.flutter.plugins.camera.features.autofocus.FocusMode getValueForString(java.lang.String) -> f
+    io.flutter.plugins.camera.features.autofocus.FocusMode[] $values() -> f
+    io.flutter.plugins.camera.features.autofocus.FocusMode getValueForString(java.lang.String) -> g
 io.flutter.plugins.camera.features.exposurelock.ExposureLockFeature -> t5.a:
     io.flutter.plugins.camera.features.exposurelock.ExposureMode currentSetting -> b
     void updateBuilder(android.hardware.camera2.CaptureRequest$Builder) -> a
@@ -47530,7 +47536,8 @@ io.flutter.plugins.camera.features.exposurelock.ExposureMode -> t5.b:
     java.lang.String strValue -> n
     io.flutter.plugins.camera.features.exposurelock.ExposureMode auto -> o
     io.flutter.plugins.camera.features.exposurelock.ExposureMode locked -> p
-    io.flutter.plugins.camera.features.exposurelock.ExposureMode getValueForString(java.lang.String) -> f
+    io.flutter.plugins.camera.features.exposurelock.ExposureMode[] $values() -> f
+    io.flutter.plugins.camera.features.exposurelock.ExposureMode getValueForString(java.lang.String) -> g
 io.flutter.plugins.camera.features.exposureoffset.ExposureOffsetFeature -> u5.a:
     double currentSetting -> b
     void updateBuilder(android.hardware.camera2.CaptureRequest$Builder) -> a
@@ -47564,7 +47571,8 @@ io.flutter.plugins.camera.features.flash.FlashMode -> w5.b:
     io.flutter.plugins.camera.features.flash.FlashMode off -> o
     io.flutter.plugins.camera.features.flash.FlashMode auto -> p
     io.flutter.plugins.camera.features.flash.FlashMode always -> q
-    io.flutter.plugins.camera.features.flash.FlashMode getValueForString(java.lang.String) -> f
+    io.flutter.plugins.camera.features.flash.FlashMode[] $values() -> f
+    io.flutter.plugins.camera.features.flash.FlashMode getValueForString(java.lang.String) -> g
 io.flutter.plugins.camera.features.focuspoint.FocusPointFeature -> x5.a:
     android.hardware.camera2.params.MeteringRectangle focusRectangle -> d
     android.util.Size cameraBoundaries -> b
@@ -47594,6 +47602,7 @@ io.flutter.plugins.camera.features.noisereduction.NoiseReductionMode -> z5.b:
     io.flutter.plugins.camera.features.noisereduction.NoiseReductionMode fast -> p
     io.flutter.plugins.camera.features.noisereduction.NoiseReductionMode highQuality -> q
     io.flutter.plugins.camera.features.noisereduction.NoiseReductionMode off -> o
+    io.flutter.plugins.camera.features.noisereduction.NoiseReductionMode[] $values() -> f
 io.flutter.plugins.camera.features.resolution.ResolutionFeature -> a6.b:
     android.media.CamcorderProfile recordingProfileLegacy -> d
     android.media.EncoderProfiles recordingProfile -> e
@@ -47626,6 +47635,7 @@ io.flutter.plugins.camera.features.resolution.ResolutionPreset -> a6.c:
     io.flutter.plugins.camera.features.resolution.ResolutionPreset low -> n
     io.flutter.plugins.camera.features.resolution.ResolutionPreset medium -> o
     io.flutter.plugins.camera.features.resolution.ResolutionPreset[] $VALUES -> t
+    io.flutter.plugins.camera.features.resolution.ResolutionPreset[] $values() -> f
 io.flutter.plugins.camera.features.sensororientation.DeviceOrientationManager -> b6.a:
     android.content.IntentFilter orientationIntentFilter -> g
     io.flutter.plugins.camera.DartMessenger messenger -> b
@@ -48951,6 +48961,7 @@ io.flutter.plugins.imagepicker.ImagePickerCache$CacheType -> io.flutter.plugins.
     io.flutter.plugins.imagepicker.ImagePickerCache$CacheType IMAGE -> n
     io.flutter.plugins.imagepicker.ImagePickerCache$CacheType VIDEO -> o
     io.flutter.plugins.imagepicker.ImagePickerCache$CacheType[] $VALUES -> p
+    io.flutter.plugins.imagepicker.ImagePickerCache$CacheType[] $values() -> f
 io.flutter.plugins.imagepicker.ImagePickerDelegate -> io.flutter.plugins.imagepicker.l:
     io.flutter.plugins.imagepicker.FileUtils fileUtils -> h
     io.flutter.plugins.imagepicker.ImagePickerDelegate$FileUriResolver fileUriResolver -> g
@@ -49122,6 +49133,7 @@ io.flutter.plugins.imagepicker.ImagePickerDelegate$CameraDevice -> io.flutter.pl
     io.flutter.plugins.imagepicker.ImagePickerDelegate$CameraDevice FRONT -> o
     io.flutter.plugins.imagepicker.ImagePickerDelegate$CameraDevice[] $VALUES -> p
     io.flutter.plugins.imagepicker.ImagePickerDelegate$CameraDevice REAR -> n
+    io.flutter.plugins.imagepicker.ImagePickerDelegate$CameraDevice[] $values() -> f
 io.flutter.plugins.imagepicker.ImagePickerDelegate$FileUriResolver -> io.flutter.plugins.imagepicker.l$d:
     android.net.Uri resolveFileProviderUriForFile(java.lang.String,java.io.File) -> a
     void getFullImagePath(android.net.Uri,io.flutter.plugins.imagepicker.ImagePickerDelegate$OnPathReadyListener) -> b
@@ -49235,6 +49247,7 @@ io.flutter.plugins.imagepicker.Messages$CacheRetrievalType -> io.flutter.plugins
     io.flutter.plugins.imagepicker.Messages$CacheRetrievalType IMAGE -> o
     io.flutter.plugins.imagepicker.Messages$CacheRetrievalType VIDEO -> p
     io.flutter.plugins.imagepicker.Messages$CacheRetrievalType[] $VALUES -> q
+    io.flutter.plugins.imagepicker.Messages$CacheRetrievalType[] $values() -> f
 io.flutter.plugins.imagepicker.Messages$FlutterError -> io.flutter.plugins.imagepicker.p$d:
     java.lang.String code -> n
     java.lang.Object details -> o
@@ -49347,6 +49360,7 @@ io.flutter.plugins.imagepicker.Messages$SourceCamera -> io.flutter.plugins.image
     io.flutter.plugins.imagepicker.Messages$SourceCamera REAR -> o
     io.flutter.plugins.imagepicker.Messages$SourceCamera[] $VALUES -> q
     io.flutter.plugins.imagepicker.Messages$SourceCamera FRONT -> p
+    io.flutter.plugins.imagepicker.Messages$SourceCamera[] $values() -> f
 io.flutter.plugins.imagepicker.Messages$SourceSpecification -> io.flutter.plugins.imagepicker.p$l:
     io.flutter.plugins.imagepicker.Messages$SourceCamera camera -> b
     io.flutter.plugins.imagepicker.Messages$SourceType type -> a
@@ -49361,6 +49375,7 @@ io.flutter.plugins.imagepicker.Messages$SourceType -> io.flutter.plugins.imagepi
     io.flutter.plugins.imagepicker.Messages$SourceType[] $VALUES -> q
     io.flutter.plugins.imagepicker.Messages$SourceType GALLERY -> p
     io.flutter.plugins.imagepicker.Messages$SourceType CAMERA -> o
+    io.flutter.plugins.imagepicker.Messages$SourceType[] $values() -> f
 io.flutter.plugins.imagepicker.Messages$VideoSelectionOptions -> io.flutter.plugins.imagepicker.p$n:
     java.lang.Long maxDurationSeconds -> a
     io.flutter.plugins.imagepicker.Messages$VideoSelectionOptions fromList(java.util.ArrayList) -> a
@@ -49460,6 +49475,7 @@ io.flutter.plugins.pathprovider.Messages$StorageDirectory -> k6.a$c:
     io.flutter.plugins.pathprovider.Messages$StorageDirectory DOWNLOADS -> w
     io.flutter.plugins.pathprovider.Messages$StorageDirectory DCIM -> x
     io.flutter.plugins.pathprovider.Messages$StorageDirectory[] $VALUES -> z
+    io.flutter.plugins.pathprovider.Messages$StorageDirectory[] $values() -> f
 io.flutter.plugins.pathprovider.PathProviderPlugin -> k6.i:
     android.content.Context context -> b
     java.util.List getExternalStoragePaths(io.flutter.plugins.pathprovider.Messages$StorageDirectory) -> a

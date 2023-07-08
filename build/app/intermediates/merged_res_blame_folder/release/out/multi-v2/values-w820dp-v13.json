@@ -4,7 +4,7 @@
             "outputFile": "com.example.scanpro.app-mergeReleaseResources-34:/values-w820dp-v13/values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/clutcher/Desktop/scanpro/build/flutter_barcode_scanner/intermediates/packaged_res/release/values-w820dp-v13/values-w820dp-v13.xml",
+                    "source": "D:\\dev\\Flutter\\scanpro\\build\\flutter_barcode_scanner\\intermediates\\packaged_res\\release\\values-w820dp-v13\\values-w820dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

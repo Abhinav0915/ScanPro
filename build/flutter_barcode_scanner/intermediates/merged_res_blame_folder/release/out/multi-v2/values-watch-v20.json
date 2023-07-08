@@ -4,7 +4,7 @@
             "outputFile": "com.amolg.flutterbarcodescanner.flutter_barcode_scanner-mergeReleaseResources-20:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/clutcher/.gradle/caches/transforms-3/bcb71054ade2de7f4dfaf698597f55fe/transformed/appcompat-1.2.0/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "C:\\Users\\asus\\.gradle\\caches\\transforms-3\\bcb71054ade2de7f4dfaf698597f55fe\\transformed\\appcompat-1.2.0\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
@@ -20,7 +20,7 @@
             "outputFile": "com.amolg.flutterbarcodescanner.flutter_barcode_scanner-merged_res-22:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/clutcher/.gradle/caches/transforms-3/bcb71054ade2de7f4dfaf698597f55fe/transformed/appcompat-1.2.0/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "C:\\Users\\asus\\.gradle\\caches\\transforms-3\\bcb71054ade2de7f4dfaf698597f55fe\\transformed\\appcompat-1.2.0\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

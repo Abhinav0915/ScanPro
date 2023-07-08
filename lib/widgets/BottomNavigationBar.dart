@@ -51,11 +51,11 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             label: 'Scan To Add',
             backgroundColor: Colors.blue,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark),
-            label: 'Scan To Sell',
-            backgroundColor: Colors.blue,
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.bookmark),
+          //   label: 'Scan To Sell',
+          //   backgroundColor: Colors.blue,
+          // ),
         ],
       ),
     );

@@ -1,12 +1,12 @@
 <lint-module
     format="1"
-    dir="/home/clutcher/Desktop/scanpro/android/app"
+    dir="D:\dev\Flutter\scanpro\android\app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.3.0"
-    buildFolder="/home/clutcher/Desktop/scanpro/build/app"
-    bootClassPath="/home/clutcher/Android/Sdk/platforms/android-33/android.jar:/home/clutcher/Android/Sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    buildFolder="D:\dev\Flutter\scanpro\build\app"
+    bootClassPath="C:\Users\asus\AppData\Local\Android\sdk\platforms\android-33\android.jar;C:\Users\asus\AppData\Local\Android\sdk\build-tools\30.0.3\core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-33">
   <lintOptions
