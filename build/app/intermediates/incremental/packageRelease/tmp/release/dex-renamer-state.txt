@@ -1,4 +1,4 @@
-#Sat Jul 08 20:10:44 IST 2023
+#Sun Jul 09 15:35:40 IST 2023
 base.0=D\:\\dev\\Flutter\\scanpro\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

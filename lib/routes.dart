@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:scanpro/screens/DetailsPage.dart';
 import 'package:scanpro/screens/addItem.dart';
+import 'package:scanpro/screens/DetailsPage.dart';
 import 'package:scanpro/widgets/confirmation.dart';
 import 'package:scanpro/screens/inventory.dart';
 
@@ -20,6 +22,19 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const ConfirmationPage(),
       );
+    case ProductDetailsPage.routName:
+      final productName = routeSettings.arguments
+          as String; // Retrieve the productName argument
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => ProductDetailsPage(
+          productName: productName,
+
+          mrp: '', // Provide the necessary values for mrp and weight
+          weight: '',
+        ),
+      );
+
     default:
       return MaterialPageRoute(
         settings: routeSettings,

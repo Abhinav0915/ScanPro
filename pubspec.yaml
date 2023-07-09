@@ -43,6 +43,8 @@ dependencies:
   cloud_firestore: ^4.8.2
   path_provider: ^2.0.15
   lottie: ^2.4.0
+  stream_transform: ^2.1.0
+  rxdart: ^0.27.7
 
 
 dev_dependencies:

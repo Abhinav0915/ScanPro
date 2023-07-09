@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:scanpro/screens/DetailsPage.dart';
 import 'package:scanpro/screens/addItem.dart';
 import '../widgets/BottomNavigationBar.dart';
 
@@ -94,6 +95,7 @@ class _InventoryPageState extends State<InventoryPage> {
                   .then((value) {
                 // Handle the scanned barcode here
                 print("Scanned: $value");
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -164,18 +166,34 @@ class _InventoryPageState extends State<InventoryPage> {
                       DataColumn(label: Text('Weight')),
                     ],
                     rows: filteredProducts.map((DocumentSnapshot document) {
-                      var productName = document['name'] ?? '';
-                      var mrp = document['mrp']?.toString() ?? '';
-                      var weight = document['weight']?.toString() ?? '';
+  var productName = document['name'] ?? '';
+  var mrp = document['mrp']?.toString() ?? '';
+  var weight = document['weight']?.toString() ?? '';
 
-                      return DataRow(
-                        cells: [
-                          DataCell(Text(productName)),
-                          DataCell(Text(mrp)),
-                          DataCell(Text(weight)),
-                        ],
-                      );
-                    }).toList(),
+  return DataRow(
+    cells: [
+      DataCell(
+        Text(productName),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProductDetailsPage(
+                productName: productName,
+                mrp: mrp,
+                weight: weight,
+                // Provide the necessary values for description
+              ),
+            ),
+          );
+        },
+      ),
+      DataCell(Text(mrp)),
+      DataCell(Text(weight)),
+    ],
+  );
+}).toList(),
+
                   ),
                 ),
               ),
